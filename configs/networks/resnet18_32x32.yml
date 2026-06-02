@@ -1,0 +1,18 @@
+network:
+  name: resnet18_32x32
+  num_classes: '@{dataset.num_classes}'
+  pretrained: False          # set 'True' to load pretrained model
+
+  # CIFAR-10
+#  checkpoint: ./results/my-pretrain-cifar-10/best.ckpt            # ignore if pretrained is false
+  # checkpoint: ./results/cifar100_resnet18_32x32_sae_e200_lr0.05/model_epoch200.ckpt            # ignore if pretrained is false
+#  checkpoint: ./results/论文一结果/CIFAR-10/CIFAR-10-FS-OOD论文结果-epoch15/model_epoch15.ckpt
+  checkpoint: ./results/cifar10_resnet18_32x32_sae_e15_lr0.01/model_epoch15.ckpt            # ignore if pretrained is false
+#  checkpoint: ./results/checkpoint/cifar10_res18_acc94.30.ckpt
+
+  # CIFAR-100
+#  checkpoint: ./results/my-pretrain-cifar-100/best_epoch982_acc0.8130.ckpt
+  # checkpoint: ./results/cifar100_resnet18_32x32_sae_e35_lr0.01/model_epoch30.ckpt
+  # checkpoint: ./results/4090/cifar100_resnet18_32x32_sae_e51_lr0.01/best_epoch35_acc0.8130.ckpt
+  # checkpoint: ./results/4090/pc50/cifar100_resnet18_32x32_sae_e40_lr0.01/model_epoch30.ckpt
+  num_gpus: '@{num_gpus}'

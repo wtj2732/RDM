@@ -1,0 +1,48 @@
+ood_dataset:
+  name: cifar10_fsood
+  num_classes: 10
+
+  num_workers: '@{num_workers}'
+  num_gpus: '@{num_gpus}'
+  num_machines: '@{num_machines}'
+
+  dataset_class: ImglistDataset
+  batch_size: 128
+  shuffle: False
+
+  split_names: [val, nearood, farood, csid]
+  val:
+    data_dir: ../data/images_classic/
+    imglist_pth: ../data/benchmark_imglist/cifar10/val_cifar10.txt
+  nearood:
+    datasets: [cifar100, tin]
+    cifar100:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_cifar100.txt
+    tin:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_tin.txt
+  farood:
+    datasets: [mnist, fashionmnist, texture, cifar100c]
+    mnist:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_mnist.txt
+    fashionmnist:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_fashionmnist.txt
+    texture:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_texture.txt
+    cifar100c:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_cifar100c.txt
+    
+  csid:
+    datasets: [cifar10c, imagenet10]
+    cifar10c:
+      data_dir: ../data/images_classic/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_cifar10c.txt
+    imagenet10:
+      data_dir: /mnt/f/wtj/images_largescale/
+      imglist_pth: ../data/benchmark_imglist/cifar10/test_imagenet10.txt
+
