@@ -5,7 +5,7 @@ _'@{postprocessor.postprocessor_args.alpha_list}'\
 _'@{postprocessor.postprocessor_args.reduce_dim_list}'\
 _'@{mark}'"
 
-# cifar-10
+
 postprocessor:
    name: gmm
    postprocessor_args:
@@ -14,39 +14,3 @@ postprocessor:
      alpha_list: [0, 0, 0, 0, 1]
      reduce_dim_list: [none, none, none, none, pca_10]   # none/capca_10/pca_50
 
-# cifar-10-densenet
-#postprocessor:
-#  name: gmm
-#  postprocessor_args:
-#    num_clusters_list: [1, 1, 1, 1, 1, 10]
-#    feature_type_list: [flat, mean, mean, mean, mean, stat]     # flat/mean/stat
-#    alpha_list: [0, 0, 0, 0, 0, 1]
-#    reduce_dim_list: [none, none, none, none, none, pca_30]   # none/capca_10/pca_50
-
-# cifar-100
-# postprocessor:
-#   name: gmm
-#   postprocessor_args:
-#     num_clusters_list: [1, 1, 1, 1, 100]
-#     feature_type_list: [stat, mean, mean, mean, flat]     # flat/mean/stat
-#     alpha_list: [0, 0, 0, 0, 1]
-#     reduce_dim_list: [none, none, none, none, pca_30]   # none/capca_10/pca_50
-
-
-# # covid
-# postprocessor:
-#   name: gmm
-#   postprocessor_args:
-#     num_clusters_list: [1, 1, 1, 1, 2]
-#     feature_type_list: [stat, mean, mean, mean, flat]     # flat/mean/stat
-#     alpha_list: [0, 0, 0, 0, 1]
-#     reduce_dim_list: [none, none, none, none, pca_30]   # none/capca_10/pca_50
-
-# mnist
-# postprocessor:
-#   name: gmm
-#   postprocessor_args:
-#     num_clusters_list: [1, 1, 10]
-#     feature_type_list: [stat, mean, flat]     # flat/mean/stat
-#     alpha_list: [0, 0, 1]
-#     reduce_dim_list: [none, none, pca_10]   # none/capca_10/pca_50
